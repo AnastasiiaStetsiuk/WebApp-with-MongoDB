@@ -1,0 +1,60 @@
+extends ../layouts/main.pug
+
+block head
+    title Trains
+
+block body 
+    h1#trains Потяги
+
+    +spacer
+
+    span Додати
+    div.d-flex.gap-2.mt-2
+        input#add-name(type="text" placeholder="Назва").form-control
+        input#add-from(type="text" placeholder="Звідки").form-control
+        input#add-to(type="text" placeholder="Куди").form-control
+        input#add-capacity(type="text" placeholder="Кількість місць").form-control
+        +button-add("add", "Додати потяг")
+
+    +spacer
+
+    span Редагувати
+    div.d-flex.gap-2.mt-2
+        input#edit-id(type="text" placeholder="ID").form-control
+        input#edit-name(type="text" placeholder="Назва").form-control
+        input#edit-from(type="text" placeholder="Звідки").form-control
+        input#edit-to(type="text" placeholder="Куди").form-control
+        input#edit-capacity(type="text" placeholder="Кількість місць").form-control
+        +button-edit("edit", "Редагувати потяг")
+
+    +spacer
+
+    span Видалити
+    div.d-flex.gap-2.mt-2
+        input#remove(type="text" placeholder="ID").form-control
+        +button-remove("remove", "Видалити потяг")
+
+    +spacer
+
+    span Пошук
+    div.d-flex.gap-2.mt-2
+        input#search(type="text" placeholder="ID, назва, маршрут").form-control
+
+    +spacer
+
+    strong
+        span#log
+
+    +spacer
+
+    table.table
+        thead
+            tr
+                th(scope="col") #
+                th(scope="col") Назва
+                th(scope="col") Звідки
+                th(scope="col") Куди
+                th(scope="col") Кількість місць
+        tbody#table
+    
+    +spacer

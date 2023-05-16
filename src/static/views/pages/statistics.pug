@@ -1,0 +1,43 @@
+extends ../layouts/main.pug
+
+block head
+    title Statistics
+
+block body 
+    h1#statistics Статистика
+
+    +spacer
+
+    span Популярні маршрути
+    ul#popular-routes
+
+    +spacer
+
+    span Прибуткові маршрути
+    ul#profitable-routes
+
+    +spacer
+
+    span Пусті маршрути
+    ul#empty-routes
+    
+    +spacer
+
+    span Квитки на заданий пояг
+    div.d-flex.gap-2.mt-2
+        input#search(type="text" placeholder="ID").form-control
+
+    +spacer
+
+    table.table
+        thead
+            tr
+                th(scope="col") #
+                th(scope="col") Пасажир
+                th(scope="col") Потяг
+                th(scope="col") Ціна
+                th(scope="col") Номер місця
+                th(scope="col") Дата
+        tbody#table
+    
+    +spacer

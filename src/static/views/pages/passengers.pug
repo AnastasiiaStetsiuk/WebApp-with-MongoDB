@@ -1,0 +1,57 @@
+extends ../layouts/main.pug
+
+block head
+    title Passengers
+
+block body 
+    h1#passengers Пасажири
+
+    +spacer
+
+    span Додати
+    div.d-flex.gap-2.mt-2
+        input#add-surname(type="text" placeholder="Прізвище").form-control
+        input#add-name(type="text" placeholder="Імʼя").form-control
+        input#add-passport(type="text" placeholder="Номер паспорта").form-control
+        +button-add("add", "Додати пасажира")
+
+    +spacer
+
+    span Редагувати
+    div.d-flex.gap-2.mt-2
+        input#edit-id(type="text" placeholder="ID").form-control
+        input#edit-surname(type="text" placeholder="Прізвище").form-control
+        input#edit-name(type="text" placeholder="Імʼя").form-control
+        input#edit-passport(type="text" placeholder="Номер паспорта").form-control
+        +button-edit("edit", "Редагувати пасажира")
+
+    +spacer
+
+    span Видалити
+    div.d-flex.gap-2.mt-2
+        input#remove(type="text" placeholder="ID").form-control
+        +button-remove("remove", "Видалити пасажира")
+
+    +spacer
+
+    span Пошук
+    div.d-flex.gap-2.mt-2
+        input#search(type="text" placeholder="ID, імʼя, паспорт").form-control
+
+    +spacer
+
+    strong
+        span#log
+
+    +spacer
+
+    table.table
+        thead
+            tr
+                th(scope="col") #
+                th(scope="col") Прізвище
+                th(scope="col") Імʼя
+                th(scope="col") Номер паспорта
+        tbody#table
+    
+    +spacer

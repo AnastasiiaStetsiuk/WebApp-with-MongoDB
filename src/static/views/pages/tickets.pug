@@ -1,0 +1,63 @@
+extends ../layouts/main.pug
+
+block head
+    title Tickets
+
+block body 
+    h1#tickets Квитки
+
+    +spacer
+
+    span Додати
+    div.d-flex.gap-2.mt-2
+        input#add-passenger(type="text" placeholder="ID пасажира").form-control
+        input#add-train(type="text" placeholder="ID потягу").form-control
+        input#add-price(type="text" placeholder="Ціна").form-control
+        input#add-seat(type="text" placeholder="Місце").form-control
+        input#add-date(type="date" placeholder="Дата").form-control
+        +button-add("add", "Додати квиток")
+
+    +spacer
+
+    span Редагувати
+    div.d-flex.gap-2.mt-2
+        input#edit-id(type="text" placeholder="ID").form-control
+        input#edit-passenger(type="text" placeholder="ID пасажира").form-control
+        input#edit-train(type="text" placeholder="ID потягу").form-control
+        input#edit-price(type="text" placeholder="Ціна").form-control
+        input#edit-seat(type="text" placeholder="Місце").form-control
+        input#edit-date(type="date" placeholder="Дата").form-control
+        +button-edit("edit", "Редагувати квиток")
+
+    +spacer
+
+    span Видалити
+    div.d-flex.gap-2.mt-2
+        input#remove(type="text" placeholder="ID").form-control
+        +button-remove("remove", "Видалити квиток")
+
+    +spacer
+
+    span Пошук
+    div.d-flex.gap-2.mt-2
+        input#search(type="text" placeholder="ID, ціна, місце, дата").form-control
+
+    +spacer
+
+    strong
+        span#log
+
+    +spacer
+
+    table.table
+        thead
+            tr
+                th(scope="col") #
+                th(scope="col") Пасажир
+                th(scope="col") Потяг
+                th(scope="col") Ціна
+                th(scope="col") Номер місця
+                th(scope="col") Дата
+        tbody#table
+    
+    +spacer
